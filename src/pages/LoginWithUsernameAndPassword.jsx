@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BackToHomeButton from "../components/BackToHomeButton";
 import { auth } from "../utils/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const LoginWithUsernameAndPassword = () => {
   const [email, setEmail] = useState("");
@@ -18,9 +19,15 @@ const LoginWithUsernameAndPassword = () => {
   const handleSignIn = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // Navigate to a different page or show a success message
+      toast.success("Sign in successful", {
+        position: "bottom-center",
+      });
       console.log("Sign in successful");
     } catch (err) {
+      toast.error(`Sign-in failed: ${err.message}`, {
+        position: "bottom-center",
+        autoClose: false,
+      });
       console.log(err.message);
     }
   };
