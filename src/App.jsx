@@ -9,7 +9,10 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/page1" element={<LoginWithUsernameAndPassword />} />
+        <Route
+          path="/loginwithcreds"
+          element={<LoginWithUsernameAndPassword />}
+        />
         <Route path="*" element={<ErrorPage />} />{" "}
         {/* Add a wildcard route for handling errors */}
       </Routes>

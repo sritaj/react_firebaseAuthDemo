@@ -6,10 +6,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (page) => {
-    navigate("/page1");
-  };
-  const handleClick = () => {
-    navigate("/about");
+    navigate(page);
   };
 
   return (
@@ -21,7 +18,7 @@ const LandingPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 justify-center">
           <CardButton
             text="Login with Username and Password"
-            onClick={() => handleCardClick("/page1")}
+            onClick={() => handleCardClick("/loginwithcreds")}
           />
           {/* <CardButton text="Page 2" onClick={() => handleCardClick("/page2")} />
           <CardButton text="Page 3" onClick={() => handleCardClick("/page3")} />
