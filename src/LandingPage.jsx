@@ -19,7 +19,10 @@ const LandingPage = () => {
           Authentication Supremacy
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 justify-center">
-          <CardButton text="Page 1" onClick={() => handleCardClick("/page1")} />
+          <CardButton
+            text="Login with Username and Password"
+            onClick={() => handleCardClick("/page1")}
+          />
           {/* <CardButton text="Page 2" onClick={() => handleCardClick("/page2")} />
           <CardButton text="Page 3" onClick={() => handleCardClick("/page3")} />
           <CardButton text="Page 4" onClick={() => handleCardClick("/page4")} />

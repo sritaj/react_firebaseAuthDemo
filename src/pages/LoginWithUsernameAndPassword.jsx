@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BackToHomeButton from "../components/BackToHomeButton";
 
-const Page1 = () => {
+const LoginWithUsernameAndPassword = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -66,4 +66,4 @@ const Page1 = () => {
   );
 };
 
-export default Page1;
+export default LoginWithUsernameAndPassword;
