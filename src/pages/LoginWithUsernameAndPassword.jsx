@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 import BackToHomeButton from "../components/BackToHomeButton";
+import { auth } from "../utils/firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const LoginWithUsernameAndPassword = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleOkayClick = () => {
-    // Handle logic for okay button click
-    console.log("Username:", username);
-    console.log("Password:", password);
+  const handleSignIn = async () => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      // Navigate to a different page or show a success message
+      console.log("Sign in successful");
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (
@@ -27,14 +33,14 @@ const LoginWithUsernameAndPassword = () => {
             Welcome to the Landing Page
           </h1>
           <div className="mb-4">
-            <label htmlFor="username" className="block mb-2">
-              Username:
+            <label htmlFor="email" className="block mb-2">
+              Email:
             </label>
             <input
               type="text"
-              id="username"
-              value={username}
-              onChange={handleUsernameChange}
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -51,7 +57,7 @@ const LoginWithUsernameAndPassword = () => {
             />
           </div>
           <button
-            onClick={handleOkayClick}
+            onClick={handleSignIn}
             className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
           >
             Login
