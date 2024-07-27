@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import LandingPage from "./LandingPage";
-import LoginWithUsernameAndPassword from "./pages/LoginWithUsernameAndPassword";
+import HomePage from "./HomePage";
+import SignInWithEmailAndPassword from "./pages/SignInWithEmailAndPassword";
 import ErrorPage from "./pages/ErrorPage"; // Import the ErrorPage component
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -10,10 +10,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route
-          path="/loginwithcreds"
-          element={<LoginWithUsernameAndPassword />}
+          path="/signinwithemailandpassword"
+          element={<SignInWithEmailAndPassword />}
         />
         <Route path="*" element={<ErrorPage />} />{" "}
         {/* Add a wildcard route for handling errors */}

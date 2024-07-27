@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import CardButton from "./components/CardButton";
 
-const LandingPage = () => {
+const HomePage = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (page) => {
@@ -18,7 +18,7 @@ const LandingPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 justify-center">
           <CardButton
             text="Login with Username and Password"
-            onClick={() => handleCardClick("/loginwithcreds")}
+            onClick={() => handleCardClick("/signinwithemailandpassword")}
           />
           {/* <CardButton text="Page 2" onClick={() => handleCardClick("/page2")} />
           <CardButton text="Page 3" onClick={() => handleCardClick("/page3")} />
@@ -31,4 +31,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default HomePage;

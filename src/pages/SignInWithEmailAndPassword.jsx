@@ -4,7 +4,7 @@ import { auth } from "../utils/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 
-const LoginWithUsernameAndPassword = () => {
+const SignInWithEmailAndPassword = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -79,4 +79,4 @@ const LoginWithUsernameAndPassword = () => {
   );
 };
 
-export default LoginWithUsernameAndPassword;
+export default SignInWithEmailAndPassword;
