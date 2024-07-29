@@ -36,9 +36,7 @@ const SignInWithEmailAndPassword = () => {
     <div className="landing-page bg-gray-200 min-h-screen flex flex-col items-center justify-center">
       <div className="max-w-md mx-auto p-6 ">
         <div className="p-6  bg-white rounded-lg shadow-lg">
-          <h1 className="text-2xl font-bold mb-4">
-            Welcome to the Landing Page
-          </h1>
+          <h1 className="text-2xl font-bold mb-4">Login With Credentials</h1>
           <div className="mb-4">
             <label htmlFor="email" className="block mb-2">
               Email:
